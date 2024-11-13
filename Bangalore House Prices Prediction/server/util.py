@@ -11,11 +11,11 @@ def load_saved_artifacts():
     global __locations
     global __model
 
-    with open('ML projects//BHP//server//artifacts//columns.json', 'r') as f:
+    with open('./artifacts/columns.json', 'r') as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]
 
-    with open('ML projects//BHP//server//artifacts//Bangalore_house_prices_model.pkl', 'rb') as f:
+    with open('./artifacts/Bangalore_house_prices_model.pkl', 'rb') as f:
         __model = pickle.load(f)
 
 def get_location_names():
