@@ -1,7 +1,7 @@
 # Polynomial Linear Regression
 
 # Importing the dataset
-dataset = read.csv('HR Salary Analysis//Position_Salaries.csv')
+dataset = read.csv('Position_Salaries.csv')
 dataset = dataset[2:3]
 
 # Fitting Linear Regression to the dataset
