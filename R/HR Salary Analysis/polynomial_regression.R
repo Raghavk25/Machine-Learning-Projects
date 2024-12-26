@@ -60,8 +60,8 @@ print(y_pred)
 
 # Predicting a new result with Polynomial Regression
 y_pred1 = predict(polynomial_regressor, newdata = data.frame(Level = 6.5,
-                                                            Level2 = 6.5^2,
-                                                            Level3 = 6.5^3,
-                                                            Level4 = 6.5^4))
+                                                             Level2 = 6.5^2,
+                                                             Level3 = 6.5^3,
+                                                             Level4 = 6.5^4))
 print(y_pred1)
 
