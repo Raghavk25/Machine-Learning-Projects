@@ -1,7 +1,7 @@
 # Support Vector Regression
 
 # Importing the dataset
-dataset = read.csv('HR Salary Analysis (SVR)//Position_Salaries.csv')
+dataset = read.csv('Position_Salaries.csv')
 dataset = dataset[2:3]
 
 # Training the SVR model to the dataset
