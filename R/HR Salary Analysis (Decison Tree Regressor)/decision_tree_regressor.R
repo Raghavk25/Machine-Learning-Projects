@@ -1,7 +1,7 @@
 # Decision Tree Regression
 
 # Importing the dataset
-dataset = read.csv('HR Salary Analysis (Decison Tree Regressor)//Position_Salaries.csv')
+dataset = read.csv('Position_Salaries.csv')
 dataset = dataset[2:3]
 
 # Training the Decision Tree Regressor to the dataset
