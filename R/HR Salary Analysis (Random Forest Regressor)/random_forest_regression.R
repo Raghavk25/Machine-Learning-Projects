@@ -1,7 +1,7 @@
 # Random Forest Regression
 
 # Importing the dataset
-dataset = read.csv('HR Salary Analysis (Random Forest Regressor)//Position_Salaries.csv')
+dataset = read.csv('Position_Salaries.csv')
 dataset = dataset[2:3]
 
 # Training the Random Forest Regressor to the dataset
