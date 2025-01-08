@@ -1,7 +1,7 @@
 # K-Nearest Neighbors Classifier
 
 # Importing the dataset
-dataset = read.csv("Purchase Behaviour Prediction//Social_Network_Ads.csv")
+dataset = read.csv("Social_Network_Ads.csv")
 
 # Splitting the dataset into Training Set and Test Set
 library(caTools)
