@@ -1,41 +1,41 @@
 # RBF kernel SVM
 
 # Importing the dataset
-dataset = read.csv("Social_Network_Ads.csv")
+dataset <- read.csv("Social_Network_Ads.csv")
 
 # Splitting the dataset into Training Set and Test Set
 library(caTools)
 set.seed(16)
-split = sample.split(dataset$Purchased, SplitRatio = 0.75)
-training_set = subset(dataset, split == TRUE)
-test_set = subset(dataset, split == FALSE)
+split <- sample.split(dataset$Purchased, SplitRatio = 0.75)
+training_set <- subset(dataset, split == TRUE)
+test_set <- subset(dataset, split == FALSE)
 
 # Feature Scaling
-training_set[, 1:2] = scale(training_set[, 1:2])
-test_set[, 1:2] = scale(test_set[, 1:2])
+training_set[, 1:2] <- scale(training_set[, 1:2])
+test_set[, 1:2] <- scale(test_set[, 1:2])
 
 # Fitting RBF kernel Support Vector Classifier to the Training Set
 library(e1071)
-classifier = svm(formula = Purchased ~ .,
+classifier <- svm(formula = Purchased ~ .,
                  data = training_set,
                  type = 'C-classification',
                  kernel = 'radial')
 
 # Predicting new results
-y_pred = predict(classifier, newdata = test_set[, 1:2])
+y_pred <- predict(classifier, newdata = test_set[, 1:2])
 
 # Making the Confusion Matrix
-cm = table(test_set[, 3], y_pred)
+cm <- table(test_set[, 3], y_pred)
 cm
 
 # Visualising Training Set results
 library(ElemStatLearn)
-set = training_set
-X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
-X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
-grid_set = expand.grid(X1, X2)
-colnames(grid_set) = c("Age", "EstimatedSalary")
-y_grid = predict(classifier, newdata = grid_set)
+set <- training_set
+X1 <- seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
+X2 <- seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
+grid_set <- expand.grid(X1, X2)
+colnames(grid_set) <- c("Age", "EstimatedSalary")
+y_grid <- predict(classifier, newdata = grid_set)
 plot(set[, -3],
      main = "RBF Kernel SVM Classification (Training set)",
      xlab = "Age", ylab = "Estimated Salary",
@@ -46,12 +46,12 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, "dodgerblue3", "salmon3"))
 
 # Visualising Test Set results
 library(ElemStatLearn)
-set = test_set
-X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
-X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
-grid_set = expand.grid(X1, X2)
-colnames(grid_set) = c("Age", "EstimatedSalary")
-y_grid = predict(classifier, newdata = grid_set)
+set <- test_set
+X1 <- seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
+X2 <- seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
+grid_set <- expand.grid(X1, X2)
+colnames(grid_set) <- c("Age", "EstimatedSalary")
+y_grid <- predict(classifier, newdata = grid_set)
 plot(set[, -3],
      main = "RBF Kernel SVM Classification (Test set)",
      xlab = "Age", ylab = "Estimated Salary",
