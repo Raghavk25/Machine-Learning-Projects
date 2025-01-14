@@ -1,21 +1,21 @@
 # Polynomial Linear Regression
 
 # Importing the dataset
-dataset = read.csv('Position_Salaries.csv')
-dataset = dataset[2:3]
+dataset <- read.csv('Position_Salaries.csv')
+dataset <- dataset[2:3]
 
 # Fitting Linear Regression to the dataset
-linear_regressor = lm(formula = Salary ~ ., 
+linear_regressor <- lm(formula = Salary ~ ., 
                       data = dataset)
 
 # Description of linear_regressor
 print(summary(linear_regressor))
 
 # Fitting Polynomial Regression to the dataset
-dataset$Level2 = dataset$Level^2
-dataset$Level3 = dataset$Level^3
-dataset$Level4 = dataset$Level^4
-polynomial_regressor = lm(formula = Salary ~ ., 
+dataset$Level2 <- dataset$Level^2
+dataset$Level3 <- dataset$Level^3
+dataset$Level4 <- dataset$Level^4
+polynomial_regressor <- lm(formula = Salary ~ ., 
                           data = dataset)
 
 # Description of polynomial_regressor
@@ -41,7 +41,7 @@ ggplot() +
 
 # Visualising the Polynomial Regression results (for higher resolution and smoother curve)
 library(ggplot2)
-x_grid = seq(min(dataset$Level), max(dataset$Level), 0.1)
+x_grid <- seq(min(dataset$Level), max(dataset$Level), 0.1)
 ggplot() +
     geom_point(aes(x = dataset$Level, y = dataset$Salary), colour = 'red') +
     geom_line(aes(x = x_grid, y = predict(polynomial_regressor,
@@ -55,11 +55,11 @@ ggplot() +
     ylab('Salary')
 
 # Predicting a new result with Linear Regression
-y_pred = predict(linear_regressor, newdata = data.frame(Level = 6.5))
+y_pred <- predict(linear_regressor, newdata = data.frame(Level = 6.5))
 print(y_pred)
 
 # Predicting a new result with Polynomial Regression
-y_pred1 = predict(polynomial_regressor, newdata = data.frame(Level = 6.5,
+y_pred1 <- predict(polynomial_regressor, newdata = data.frame(Level = 6.5,
                                                              Level2 = 6.5^2,
                                                              Level3 = 6.5^3,
                                                              Level4 = 6.5^4))
