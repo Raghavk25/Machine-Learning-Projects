@@ -1,17 +1,17 @@
 # Support Vector Regression
 
 # Importing the dataset
-dataset = read.csv('Position_Salaries.csv')
-dataset = dataset[2:3]
+dataset <- read.csv('Position_Salaries.csv')
+dataset <- dataset[2:3]
 
 # Training the SVR model to the dataset
 library(e1071)
-regressor = svm(formula = Salary ~ .,
+regressor <- svm(formula = Salary ~ .,
                 data = dataset,
                 type = 'eps-regression')
 
 # Predicting a new result
-y_pred = predict(regressor, data.frame(Level = 6.5))
+y_pred <- predict(regressor, data.frame(Level = 6.5))
 print(y_pred)
 
 # Visualising the SVR results
