@@ -1,7 +1,7 @@
 # Naive Bayes Classification
 
 # Importing the datasets
-dataset <- read.csv("Purchase Behaviour Prediction (Naive Bayes)//Social_Network_Ads.csv")
+dataset <- read.csv("Social_Network_Ads.csv")
 
 # Encoding the target feature as factor
 dataset$Purchased <- factor(dataset$Purchased, levels = c(0, 1))
