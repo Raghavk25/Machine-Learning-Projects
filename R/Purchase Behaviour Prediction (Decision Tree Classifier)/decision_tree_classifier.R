@@ -1,7 +1,7 @@
 # Decision Tree Classification
 
 # Importing the datasets
-dataset <- read.csv("Purchase Behaviour Prediction (Decision Tree Classifier)//Social_Network_Ads.csv")
+dataset <- read.csv("Social_Network_Ads.csv")
 
 # Encoding the target feature as a factor
 dataset$Purchased <- factor(dataset$Purchased, levels = c(0, 1))
