@@ -1,7 +1,7 @@
 # Random Forest Classifier
 
 # Importing the dataset
-dataset <- read.csv("Purchase Behaviour Prediction (Random Forest Classifier)//Social_Network_Ads.csv")
+dataset <- read.csv("Social_Network_Ads.csv")
 
 # Encoding target variable as a factor
 dataset$Purchased <- factor(dataset$Purchased, levels = c(0, 1))
