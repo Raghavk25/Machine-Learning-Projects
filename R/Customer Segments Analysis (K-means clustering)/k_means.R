@@ -1,7 +1,7 @@
 # K-means clustering
 
 # Importing the dataset
-dataset <- read.csv('Customer Segments Analysis (K-means clustering)//Mall_Customers.csv')
+dataset <- read.csv('Mall_Customers.csv')
 X <- dataset[, 4:5]
 
 # Using the elbow method to find the optimal number of clusters
