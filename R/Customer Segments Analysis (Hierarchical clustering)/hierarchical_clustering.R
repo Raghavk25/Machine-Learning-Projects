@@ -1,7 +1,7 @@
 # Hierarchical clustering
 
 # Importing the dataset
-dataset <- read.csv("Customer Segments Analysis (Hierarchical clustering)//Mall_Customers.csv")
+dataset <- read.csv("Mall_Customers.csv")
 dataset <- dataset[, 4:5]
 
 # Using the dendrogram to find the optimal number of clusters
