@@ -2,8 +2,7 @@
 
 # Data Preprocessing
 library(arules)
-dataset <- read.transactions("Market Association Rule Learning (Apriori)//Market_Basket_Optimisation.csv",
-                             sep = ",", rm.duplicates = TRUE)
+dataset <- read.transactions("Market_Basket_Optimisation.csv", sep = ",", rm.duplicates = TRUE)
 summary(dataset)
 itemFrequencyPlot(dataset, topN = 10)
 
