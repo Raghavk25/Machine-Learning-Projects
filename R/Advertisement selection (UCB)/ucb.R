@@ -1,7 +1,7 @@
 # Upper Confidence Bound
 
 # Importing the dataset
-dataset <- read.csv("Advertisement selection (UCB)//Ads_CTR_Optimisation.csv")
+dataset <- read.csv("Ads_CTR_Optimisation.csv")
 
 # Implementing UCB
 N <- 10000
