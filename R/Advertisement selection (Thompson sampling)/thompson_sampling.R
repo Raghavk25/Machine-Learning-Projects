@@ -1,7 +1,7 @@
 # Thompson sampling
 
 # Importing the dataset
-dataset <- read.csv("Advertisement selection (Thompson sampling)//Ads_CTR_Optimisation.csv")
+dataset <- read.csv("Ads_CTR_Optimisation.csv")
 
 # Implementing Thompson sampling on the dataset
 N <- 10000
