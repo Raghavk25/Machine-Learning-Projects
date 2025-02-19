@@ -1,8 +1,7 @@
 # Natural Language Processing
 
 # Importing the dataset
-dataset <- read.delim("Sentiment Analysis (Restaurant Reviews)//Restaurant_Reviews.tsv",
-                      quote = '', stringsAsFactors = FALSE)
+dataset <- read.delim("Restaurant_Reviews.tsv", quote = '', stringsAsFactors = FALSE)
 
 # Cleaning the texts
 library(tm)
